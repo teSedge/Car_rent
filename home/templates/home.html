@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+FIRST MOTOR CLUB
+{% endblock %}
+
+{% block content %}
+
+
+<div>
+	<div class="px-4 pt-5 text-center bg-car text-light shaded me-0">
+		<br><br><br>
+		<h1 class="inner fs-1" >Аренда элитных автомобилей в Москве</h1>
+		<div class="col-lg-6 mx-auto">
+			<p class="fs-3 lead mb-4 inner">Выберите авто и уже сегодня получите удовольствие от вождения по лучшей цене</p>
+			<br><br><br><br><br>
+			<div class="inner d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+				<a href="#cars"><button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Выбрать авто</button></a>
+			</div>
+    	</div>
+		<br><br><br><br><br><br><br><br>
+	</div>
+</div>
+
+<div class="container-fluid bg-brandcolor py-3 border-0 d-flex black-shd">
+	<a name="cars"></a>
+	<div class="row container-fluid d-flex justify-content-center mt-5 mb-4 px-md-5">
+		<div class="d-flex justify-content-center">
+			<h1 class="font-brand p-5">Автомобили</h1>
+		</div>
+		{% for car in cars %}
+		<div class="col-lg-6 my-3">
+			<a href="{{car.get_url}}">
+				<div class="card bg-dark text-light blue-shd">
+					<div>
+						<img src="{{car.main_image.url}}" class="card-img-top car-img" style="pointer-events: none">
+					</div>
+					<div class="card-body">
+						<div class="row justify-content-between">
+							<h2 class="font-brand card-title col-auto link-empty d-none d-lg-block">{{car.name}}</h2>
+							<p class="font-brand col-auto card-title d-none d-lg-block">от {{ car.price_11_20 }} ₽</p>
+						</div>
+						<div class="container text-center d-block d-lg-none">
+							<h2 class="font-brand card-title col-auto link-empty">{{car.name}}</h2>
+							<p class="font-brand col-auto card-title">от {{ car.price_11_20 }} ₽</p>
+						</div>
+					</div>
+				</div>
+			</a>	
+		</div>
+		{% endfor %}
+	</div >
+</div>
+<a name="terms"></a>
+<div class="container-fluid bg-brandcolor py-3 border-0 text-center font-brand">
+	<br>
+	<h1 class="font-brand p-5 mt-5">Условия аренды</h1>
+	<div class="row d-flex justify-content-center">
+		<div class="col-md-2 col-5">
+			<h2>возраст</h2>
+			<h3>20+</h3>	
+		</div>
+		<div class="col-md-2 col-5">
+			<h2>стаж</h2>
+			<h3>от 1 года</h3>
+		</div>
+	</div>
+	<div class="row">
+		
+		<div class="col-3">
+		
+		</div>
+		<div class="mt-5 d-flex col-md-6 col-12 justify-content-center">
+			<div>
+				<pre class="text-start fs-5 font-brand" style="white-space:pre-wrap;">
+<span class="fw-bold fs-4">Депозит</span>
+Перед арендой вносится денежный депозит, размер которого зависит от выбранного авто
+
+<span class="fw-bold fs-4">Доставка авто</span>
+Бесплатно доставим авто в Москве
+
+<span class="fw-bold fs-4">Территория использования</span>
+Авто может использоваться в пределах Москвы и Московской области
+
+<span class="fw-bold fs-4">Для юр. лиц</span>
+Работаем с юридическими лицами, предоставим все необходимые документы для бизнеса
+				</pre >
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid bg-brandcolor py-3 border-0 font-brand">
+	<a name="contacts"></a>
+	<br>
+	<h1 class="font-brand p-5 text-center">Контакты</h1>
+	<div class="row">
+		<div class="col-3">
+		</div>
+		<div class="mt-5 col-md-6 col-12">
+			<p>Телефон: +7 (926) 104-18-20</p>
+			<p>Почта: test@gmail.com</p>
+		</div>
+	</div>
+	
+</div>
+
+
+{% endblock %}

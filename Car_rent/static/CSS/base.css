@@ -1,0 +1,100 @@
+a {
+	text-decoration: none !important;
+}
+
+.modal-title-m{
+    margin-left: 315px; 
+}
+
+.crop {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.md-48{
+  font-size: 100px !important;
+  color: green !important;
+}
+.sticky {
+  position: sticky;
+  top: 150px;
+}
+
+.crop img {  
+    width: 100%;
+    height: auto;
+    margin: -30px px 0px 0px;
+}
+.brand-color{
+    color: #81abcf;
+}
+.bg-car {
+    background-image: url('home_car.png');
+    background-color: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto ;
+  }
+
+.bg-brandcolor {
+    background-color: #0a100c;
+  }
+
+.car-img {
+    object-fit: cover;
+}
+
+.font-brand{
+    font-family:"IBM";
+}
+
+.black-shd{
+    box-shadow: 0 0 200px #000000;
+}
+
+.blue-shd{
+    box-shadow: 0 0 3px #0B5ED7;
+}
+
+.brand-text{
+    color: #1f16ba;
+}
+
+.shaded {
+  position: relative;
+  
+  background-image: url('home_car.png');
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+
+.shaded:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 2;
+}
+
+.inner {
+  position: relative;
+  z-index: 3;
+}
+
+@font-face{
+    font-family: "IBM";
+    src: url("IBMPlexSerif-Regular.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: "ROBOTO";
+    src: url("Roboto-Medium.ttf");
+    font-style: normal;
+    font-weight: normal;
+}

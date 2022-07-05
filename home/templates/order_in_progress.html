@@ -1,0 +1,17 @@
+<{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+Car rent
+{% endblock %}
+
+{% block content %}	
+	<div class="text-center">
+		<span class="material-icons-outlined md-48">done</span>
+		<h1 class="my-3">Ваша заявка в обработке.</h1>
+		<h4 class='my-3'>В ближйшее время мы с Вами свяжемся!</h4>
+		<a href="{%url 'home'%}#cars"><button class="btn btn-primary my-3">Перейти к выбору авто</button></a>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	</div>
+{% endblock %}

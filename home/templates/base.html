@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}{% endblock %}</title>
+	<!-- icons -->
+	<link rel="icon" href="{% static 'icons/favicon.ico' %}" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="/{% static 'apple-touch-icon.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="/{% static 'favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="/{% static 'favicon-16x16.png' %}">
+	<link rel="manifest" href="/{% static 'site.webmanifest' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/base.css' %}">
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}" type="text/css">
+
+	<!-- Google icons -->
+	<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
+
+</head>
+<body class="px-0 mx-0 bg-brandcolor text-light">
+	<header>
+	{% include 'navbar.html' %}
+	</header>
+
+	{% block content %}
+	{% endblock %}
+	
+	{% include 'footer.html' %}
+	<script src="{% static 'bootstrap/bootstrap.bundle.js' %}" crossorigin="anonymous"></script>
+	
+	<!-- <script type="text/javascript">
+		const navLinks = document.querySelectorAll('.nav-link')
+		const menuToggle = document.getElementById('navbar')
+		const bsCollapse = new bootstrap.Collapse(menuToggle)
+		navLinks.forEach((l) => {  
+		    l.addEventListener('click', () => { bsCollapse.toggle() })
+		
+		})
+	</script> -->
+	
+</body>
+</html>

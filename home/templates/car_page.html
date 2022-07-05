@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+{{car.name}}
+{% endblock %}
+
+{% block content %}
+<div class=" d-flex justify-content-center mb-3 mt-5">
+	<h1 class="text-light font-brand">{{car.name}}</h1>
+</div>
+<div class="px-0 px-md-5 row overflow-visible d-flex me-3">
+<div class="col-lg-7 col-12">
+<div id="carouselExampleIndicators" class="container-fluid carousel slide" data-bs-interval="false" data-bs-ride="carouse">
+  <div class="carousel-indicators">
+    
+
+
+    {% for img in imgs %}
+    {% if img.N == 0 %}
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+
+    {% else %}
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{img.N}}" aria-label="Slide {{img.N}}"></button>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <div class="rounded carousel-inner">
+    
+    
+    {% for img in imgs %}
+    {% if img.N == 0 %}
+    <div class="carousel-item active">
+      <img src="{{ img.image.url }}" class=" car-img col-12" alt="..." style="pointer-events: none">
+    </div>
+    {% else %}
+    <div class="carousel-item">
+      <img src="{{img.image.url}}" class="car-img  col-12" alt="..." style="pointer-events: none">
+    </div>
+    {% endif %}
+    {% endfor %}
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Предыдущий</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Следующий</span>
+  </button>
+</div>
+
+<div class=" ms-md-4 ms-5 px-0 my-3 fs-1 fw-semilight d-none d-md-block d-sm-none d-lg-block">
+  <p class="mx-0 text-uppercase fs-6">
+    <span class="brand-color">Мощность </span>{{car.power}} <span class="px-3">&nbsp;</span>
+    <span class="brand-color">Разгон до 100 км/ч </span>{{car.acceleration}} <span class="px-3">&nbsp;</span>
+    <span class="brand-color">Привод </span> {{car.wd}} <span class="px-3">&nbsp;</span>
+    <span class="brand-color">Год Выпуска </span> {{car.year}}
+  </p> 
+</div>
+
+<div class="ms-5 my-3 fs-1 fw-semilight d-md-none">
+  <p class="mx-0 text-uppercase fs-6">
+    <span class="brand-color">Мощность </span>{{car.power}} <span class="px-3"><br></span>
+    <span class="brand-color">Разгон до 100 км/ч </span>{{car.acceleration}} <span class="px-3"><br></span>
+    <span class="brand-color">Привеод </span> {{car.wd}} <span class="px-3"><br></span>
+    <span class="brand-color">Год Выпуска </span> {{car.year}}
+  </p> 
+</div>
+
+</div>
+    
+	<div class="sticky d-flex col-lg-5 col-12 p-5 flex-column align-items-center text-center">
+		<h3>Стоимость за сутки</h3>
+    <div class="font-brand container-fluid d-flex justify-content-center bg-dark p-3 m-2 rounded-3 blue-shd"><h4>1-2 суток&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{car.price_1_2}} ₽</h4></div>
+    <div class="font-brand container-fluid d-flex justify-content-center bg-dark p-3 m-2 rounded-3 blue-shd"><h4>3-10 суток&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{car.price_3_10}} ₽</h4></div>
+    <div class="font-brand container-fluid d-flex justify-content-center bg-dark p-3 m-2 rounded-3 blue-shd"><h4>11-20 суток&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{car.price_11_20}} ₽</h4></div>
+    <div class="font-brand container-fluid d-flex justify-content-center bg-dark p-3 m-2 rounded-3 blue-shd"><h4>21+ суток&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; индивидульная&nbsp;цена</h4></div>
+    <button class="text-lite justify seld center btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#dialog"><h3>Арендовать</h3></button>	
+  </div>
+</div>
+<div class="col-7 m-5 font-brand d-flex">
+<pre class="mx-md-4 font-brand fs-4" style="white-space:pre-wrap; ">{{car.discription}}</pre>
+</div>
+<br><br><br><br>
+{% endblock %}
